@@ -43,11 +43,11 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Homepage = "https://thorwhalen.github.io/aikb/"
-Repository = "https://github.com/thorwhalen/aikb"
-Documentation = "https://thorwhalen.github.io/aikb"
-Issues = "https://github.com/thorwhalen/aikb/issues"
-Changelog = "https://github.com/thorwhalen/aikb/blob/main/CHANGELOG.md"
+Homepage = "https://addaix.github.io/aikb/"
+Repository = "https://github.com/addaix/aikb"
+Documentation = "https://addaix.github.io/aikb"
+Issues = "https://github.com/addaix/aikb/issues"
+Changelog = "https://github.com/addaix/aikb/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]
 claude = [
