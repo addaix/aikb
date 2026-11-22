@@ -1,0 +1,15 @@
+﻿aikb
+====
+
+.. automodule:: aikb
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   base
+   mcp_server
+   sync

@@ -1,0 +1,12 @@
+aikb.mcp\_server
+================
+
+.. automodule:: aikb.mcp_server
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      create_server
+   

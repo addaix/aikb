@@ -1,4 +1,0 @@
-aikb.mcp_server
-===============
-.. automodule:: aikb.mcp_server
-   :members:

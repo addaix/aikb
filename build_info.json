@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "built_at": "2026-11-22T14:37:09Z",
+  "package": {
+    "name": "aikb",
+    "version": "0.0.8",
+    "display_name": "aikb",
+    "source": "pyproject.toml"
+  },
+  "git": {
+    "available": true,
+    "commit": "d6a16583ca8e178178b2c94481736f20ada22f61",
+    "short_commit": "d6a1658",
+    "branch": "main",
+    "tags": [
+      "0.0.8"
+    ],
+    "dirty": false,
+    "remote_url": "https://github.com/addaix/aikb",
+    "commit_url": "https://github.com/addaix/aikb/commit/d6a16583ca8e178178b2c94481736f20ada22f61",
+    "error": null
+  },
+  "ci": {
+    "provider": "github",
+    "repository": "addaix/aikb",
+    "sha": "c2dd525b30f4c860d145dd2f2d081330e6f5ab30",
+    "sha_in_history": true,
+    "ref": "refs/heads/main",
+    "ref_name": "main",
+    "run_id": "45033663440",
+    "run_url": "https://github.com/addaix/aikb/actions/runs/45033663440",
+    "server_url": "https://github.com"
+  },
+  "tools": {
+    "epythet": "0.2.23",
+    "sphinx": "9.1.1",
+    "docutils": "0.22.4",
+    "python": "3.12.16"
+  },
+  "config": {
+    "theme": "auto",
+    "html_theme": "furo",
+    "accent": "#23691d",
+    "mode": "auto",
+    "api_generator": "autosummary",
+    "ignore": [
+      "tests/",
+      "scrap/",
+      "examples/"
+    ],
+    "agent_outputs": true,
+    "aggregates": [
+      "md"
+    ],
+    "ai_artifacts": true,
+    "provenance": true,
+    "docs_dir": "docsrc"
+  },
+  "site": {
+    "modules_documented": 4,
+    "objects_documented": 9
+  },
+  "pypi": {
+    "checked": true,
+    "latest": "0.0.8",
+    "relation": "same",
+    "error": null
+  },
+  "reproduce": "git clone https://github.com/addaix/aikb && cd aikb\ngit checkout d6a16583ca8e178178b2c94481736f20ada22f61\npip install \"epythet==0.2.23\"\nepythet quickstart . --ignore tests/ scrap/ examples/",
+  "warnings": [],
+  "alignment": {
+    "aligned": true,
+    "notes": []
+  }
+}

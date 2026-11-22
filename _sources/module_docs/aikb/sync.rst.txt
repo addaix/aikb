@@ -1,4 +1,0 @@
-aikb.sync
-=========
-.. automodule:: aikb.sync
-   :members:

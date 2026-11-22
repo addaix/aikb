@@ -1,0 +1,6 @@
+aikb.sync
+=========
+
+.. currentmodule:: aikb
+
+.. autofunction:: sync

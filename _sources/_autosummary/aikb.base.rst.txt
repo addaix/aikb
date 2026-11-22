@@ -1,0 +1,23 @@
+aikb.base
+=========
+
+.. automodule:: aikb.base
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      ClaudeProject
+      LocalKb
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ClaudeProjects
+      ClaudeProjectsProvider
+      KnowledgeBaseProvider
+      KnowledgeFiles
+      LocalFilesProvider
+   

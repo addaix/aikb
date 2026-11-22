@@ -1,4 +1,0 @@
-aikb
-====
-.. automodule:: aikb
-   :members:
