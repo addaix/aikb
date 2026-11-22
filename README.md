@@ -14,10 +14,10 @@ To install:	`pip install aikb`
 from aikb import LocalKb
 
 store = LocalKb()  # ~/.local/share/aikb/localkb_files/default/
-store['ideas.md'] = '# Ideas\nFirst idea'
-print(store['ideas.md'])
-list(store)          # ['ideas.md']
-del store['ideas.md']
+store["ideas.md"] = "# Ideas\nFirst idea"
+print(store["ideas.md"])
+list(store)  # ['ideas.md']
+del store["ideas.md"]
 ```
 
 Every store is a standard Python `MutableMapping` (dict-like), so `len()`,
@@ -26,8 +26,8 @@ Every store is a standard Python `MutableMapping` (dict-like), so `len()`,
 Override the default directory with a path or the `AIKB_LOCAL_DIR` env var:
 
 ```python
-store = LocalKb('/path/to/my/knowledge')
-store = LocalKb(project_id='research')  # subfolder under default dir
+store = LocalKb("/path/to/my/knowledge")
+store = LocalKb(project_id="research")  # subfolder under default dir
 ```
 
 ## Claude Projects
@@ -44,10 +44,10 @@ pip install aikb[claude]
 from aikb import ClaudeProjects
 
 projects = ClaudeProjects()
-list(projects)                  # ['My Project', 'Another Project', ...]
-files = projects['My Project']  # returns a dict-like store
-list(files)                     # ['context.md', 'notes.md']
-print(files['context.md'])
+list(projects)  # ['My Project', 'Another Project', ...]
+files = projects["My Project"]  # returns a dict-like store
+list(files)  # ['context.md', 'notes.md']
+print(files["context.md"])
 ```
 
 ### Direct access by project UUID
@@ -55,10 +55,10 @@ print(files['context.md'])
 ```python
 from aikb import ClaudeProject
 
-store = ClaudeProject('your-project-uuid')
-store['context.md'] = '# Project context\n...'
-print(store['context.md'])
-del store['context.md']
+store = ClaudeProject("your-project-uuid")
+store["context.md"] = "# Project context\n..."
+print(store["context.md"])
+del store["context.md"]
 ```
 
 ### Getting your session key
@@ -99,12 +99,12 @@ aikb includes a sync engine that works with any two `MutableMapping` stores — 
 ```python
 from aikb import LocalKb, ClaudeProject, push, pull
 
-local = LocalKb('/path/to/docs')
-remote = ClaudeProject('project-uuid')
+local = LocalKb("/path/to/docs")
+remote = ClaudeProject("project-uuid")
 
-push(local, remote)                # local → remote (source wins)
-push(local, remote, delete=True)   # also remove remote files not in local
-pull(local, remote)                # remote → local
+push(local, remote)  # local → remote (source wins)
+push(local, remote, delete=True)  # also remove remote files not in local
+pull(local, remote)  # remote → local
 ```
 
 ### Bidirectional sync (three-way reconciliation)
@@ -113,10 +113,10 @@ pull(local, remote)                # remote → local
 from aikb import sync, clone
 
 # First time: clone to establish a manifest (baseline)
-clone(local, remote, manifest_path='.aikb/manifest.json')
+clone(local, remote, manifest_path=".aikb/manifest.json")
 
 # Later: bidirectional sync detects who changed what
-sync(local, remote, manifest_path='.aikb/manifest.json')
+sync(local, remote, manifest_path=".aikb/manifest.json")
 ```
 
 ### Status (dry run)
@@ -133,15 +133,16 @@ for action in status(local, remote):
 ```python
 from aikb import sync, ConflictPolicy
 
-sync(a, b, manifest=m, on_conflict=ConflictPolicy.A_WINS)   # local wins
-sync(a, b, manifest=m, on_conflict=ConflictPolicy.SKIP)     # skip conflicts
-sync(a, b, manifest=m, on_conflict=my_resolver_function)    # custom callable
+sync(a, b, manifest=m, on_conflict=ConflictPolicy.A_WINS)  # local wins
+sync(a, b, manifest=m, on_conflict=ConflictPolicy.SKIP)  # skip conflicts
+sync(a, b, manifest=m, on_conflict=my_resolver_function)  # custom callable
 ```
 
 Works with plain dicts too — no aikb stores required:
 
 ```python
 from aikb import push
+
 src = {"readme.md": "# Hello", "notes.md": "..."}
 tgt = {}
 push(src, tgt)  # tgt is now a copy of src
@@ -154,13 +155,15 @@ Implement the `KnowledgeBaseProvider` protocol to add new backends:
 ```python
 from aikb import KnowledgeFiles, KnowledgeBaseProvider
 
+
 class MyProvider:  # no inheritance needed — just implement the methods
     def list_files(self, project_id: str): ...
     def read_file(self, project_id: str, filename: str) -> str: ...
     def upsert_file(self, project_id: str, filename: str, content: str): ...
     def delete_file(self, project_id: str, filename: str): ...
 
-store = KnowledgeFiles(MyProvider(), project_id='my-project')
+
+store = KnowledgeFiles(MyProvider(), project_id="my-project")
 ```
 
 ## MCP server
@@ -190,7 +193,7 @@ from dol import wrap_kvs
 from aikb import LocalKb
 
 store = wrap_kvs(
-    LocalKb('/tmp/kb'),
+    LocalKb("/tmp/kb"),
     obj_of_data=lambda s: s.upper(),  # transforms on read
 )
 ```

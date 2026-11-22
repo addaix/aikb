@@ -97,13 +97,15 @@ The `dol` package (i2mint/dol, MIT license, pure Python, zero dependencies) prov
 ```python
 from dol import wrap_kvs, Store
 
+
 @wrap_kvs(
     id_of_key=lambda filename: f"projects/{project_id}/files/{filename}",
-    obj_of_data=lambda data: data.decode('utf-8'),
-    data_of_obj=lambda obj: obj.encode('utf-8')
+    obj_of_data=lambda data: data.decode("utf-8"),
+    data_of_obj=lambda obj: obj.encode("utf-8"),
 )
 class ClaudeProjectStore(Store):
     """Dict-like access to Claude Project knowledge files."""
+
     pass
 ```
 
@@ -122,22 +124,23 @@ This yields `store['ideas.md'] = "content"`, `del store['outdated-notes.md']`, `
 ```python
 class AIKnowledgeStore(MutableMapping):
     """Unified dict-like interface to AI project knowledge bases."""
+
     def __init__(self, provider: BaseProvider, project_id: str):
         self.provider = provider
         self.project_id = project_id
-    
+
     def __getitem__(self, filename: str) -> str:
         return self.provider.read_file(self.project_id, filename)
-    
+
     def __setitem__(self, filename: str, content: str):
         self.provider.upsert_file(self.project_id, filename, content)
-    
+
     def __delitem__(self, filename: str):
         self.provider.delete_file(self.project_id, filename)
-    
+
     def __iter__(self):
         return iter(self.provider.list_files(self.project_id))
-    
+
     def __len__(self):
         return len(self.provider.list_files(self.project_id))
 ```
@@ -149,8 +152,11 @@ from fastmcp import FastMCP
 
 mcp = FastMCP("ai-knowledge-crud")
 
+
 @mcp.tool()
-def write_knowledge_file(platform: str, project: str, filename: str, content: str) -> dict:
+def write_knowledge_file(
+    platform: str, project: str, filename: str, content: str
+) -> dict:
     """Create or update a knowledge file in an AI project."""
     store = get_store(platform, project)
     store[filename] = content

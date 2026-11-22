@@ -37,11 +37,11 @@ The sync engine operates on any two `MutableMapping` instances — plain dicts, 
 ```python
 from aikb import LocalKb, ClaudeProject, push
 
-local = LocalKb('/path/to/docs')
-remote = ClaudeProject('project-uuid')
+local = LocalKb("/path/to/docs")
+remote = ClaudeProject("project-uuid")
 
-push(local, remote)                # copy new/changed files
-push(local, remote, delete=True)   # also remove remote extras
+push(local, remote)  # copy new/changed files
+push(local, remote, delete=True)  # also remove remote extras
 push(local, remote, dry_run=True)  # preview without applying
 ```
 
@@ -50,8 +50,8 @@ push(local, remote, dry_run=True)  # preview without applying
 ```python
 from aikb import pull
 
-pull(local, remote)                # remote → local
-pull(local, remote, delete=True)   # also remove local extras
+pull(local, remote)  # remote → local
+pull(local, remote, delete=True)  # also remove local extras
 ```
 
 ### Bidirectional sync with manifest
@@ -60,10 +60,10 @@ pull(local, remote, delete=True)   # also remove local extras
 from aikb import clone, sync
 
 # First time: clone establishes the manifest (baseline snapshot)
-clone(local, remote, manifest_path='.aikb/manifest.json')
+clone(local, remote, manifest_path=".aikb/manifest.json")
 
 # Later: three-way reconciliation detects who changed what
-sync(local, remote, manifest_path='.aikb/manifest.json')
+sync(local, remote, manifest_path=".aikb/manifest.json")
 ```
 
 Without a manifest, `sync` treats everything as "created" (first-sync behavior). The manifest stores `{filename: content_hash}` and is updated after each successful sync.
@@ -75,7 +75,7 @@ from aikb import status
 
 actions = status(local, remote)
 for a in actions:
-    if a.action.value != 'noop':
+    if a.action.value != "noop":
         print(f"{a.action.value:8s} {a.direction:10s} {a.filename} — {a.reason}")
 ```
 
@@ -89,10 +89,12 @@ sync(a, b, manifest=m, on_conflict=ConflictPolicy.A_WINS)
 sync(a, b, manifest=m, on_conflict=ConflictPolicy.B_WINS)
 sync(a, b, manifest=m, on_conflict=ConflictPolicy.SKIP)
 
+
 # Custom callable: receives SyncAction, returns resolved SyncAction
 def my_resolver(action):
     print(f"Conflict on {action.filename}, keeping A's version")
-    return SyncAction(action.filename, ActionType.UPDATE, 'a_to_b', 'user chose A')
+    return SyncAction(action.filename, ActionType.UPDATE, "a_to_b", "user chose A")
+
 
 sync(a, b, manifest=m, on_conflict=my_resolver)
 ```
@@ -111,7 +113,7 @@ push(a, b)  # b is now a copy of a
 
 ```python
 # Only sync markdown files: use a filtered dict
-md_files = {k: local[k] for k in local if k.endswith('.md')}
+md_files = {k: local[k] for k in local if k.endswith(".md")}
 push(md_files, remote)
 ```
 
@@ -120,8 +122,8 @@ push(md_files, remote)
 ```python
 from aikb import ClaudeProject, push
 
-proj_a = ClaudeProject('uuid-a')
-proj_b = ClaudeProject('uuid-b')
+proj_a = ClaudeProject("uuid-a")
+proj_b = ClaudeProject("uuid-b")
 push(proj_a, proj_b, delete=True)  # exact mirror
 ```
 

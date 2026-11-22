@@ -162,9 +162,10 @@ The path is: `local ↔ Google Drive folder ↔ Gemini Gem` (the second link is 
 ```python
 from pydrive2.auth import GoogleAuth
 from pydrive2.drive import GoogleDrive
+
 gauth = GoogleAuth()
 drive = GoogleDrive(gauth)
-file = drive.CreateFile({'title': 'ideas.md', 'parents': [{'id': gem_folder_id}]})
+file = drive.CreateFile({"title": "ideas.md", "parents": [{"id": gem_folder_id}]})
 file.SetContentString("# Ideas\n...")
 file.Upload()
 ```
@@ -196,13 +197,14 @@ Each backend is a `MutableMapping[str, str]` where keys are filenames and values
 ```python
 from collections.abc import MutableMapping
 
+
 class BaseProjectStore(MutableMapping):
     """Abstract base for AI project knowledge file stores."""
-    
+
     def snapshot(self) -> dict[str, str]:
         """Return {filename: content_hash} for all files."""
         ...
-    
+
     # __getitem__, __setitem__, __delitem__, __iter__, __len__
     # implemented by subclasses
 ```
@@ -220,21 +222,21 @@ The sync engine operates on pairs of stores + a manifest:
 @dataclass
 class SyncAction:
     filename: str
-    action: Literal['create', 'update', 'delete']
-    direction: Literal['local_to_remote', 'remote_to_local']
+    action: Literal["create", "update", "delete"]
+    direction: Literal["local_to_remote", "remote_to_local"]
     reason: str  # e.g., "modified locally", "created remotely"
 
-@dataclass  
+
+@dataclass
 class Conflict:
     filename: str
     local_hash: str | None
     remote_hash: str | None
     manifest_hash: str | None
 
+
 def reconcile(
-    local: BaseProjectStore,
-    remote: BaseProjectStore, 
-    manifest: dict[str, str]
+    local: BaseProjectStore, remote: BaseProjectStore, manifest: dict[str, str]
 ) -> tuple[list[SyncAction], list[Conflict]]:
     """Three-way reconciliation. Returns actions and conflicts."""
     ...

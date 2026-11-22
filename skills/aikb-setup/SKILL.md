@@ -49,24 +49,24 @@ from aikb import LocalKb
 store = LocalKb()  # uses ~/.local/share/aikb/localkb_files/default/
 
 # Write files
-store['context.md'] = '# Project Context\nThis project does...'
-store['api-notes.md'] = '# API Notes\nEndpoint documentation...'
+store["context.md"] = "# Project Context\nThis project does..."
+store["api-notes.md"] = "# API Notes\nEndpoint documentation..."
 
 # List files
 print(list(store))  # ['api-notes.md', 'context.md']
 
 # Read a file
-print(store['context.md'])
+print(store["context.md"])
 
 # Delete a file
-del store['api-notes.md']
+del store["api-notes.md"]
 ```
 
 Override the default directory:
 
 ```python
-store = LocalKb('/custom/path')               # explicit directory
-store = LocalKb(project_id='research')         # subfolder under default dir
+store = LocalKb("/custom/path")  # explicit directory
+store = LocalKb(project_id="research")  # subfolder under default dir
 ```
 
 Or set `AIKB_LOCAL_DIR` environment variable to change the default root.
@@ -112,9 +112,9 @@ aikb will use its stored credentials automatically.
 from aikb import ClaudeProjects
 
 projects = ClaudeProjects()
-list(projects)                    # ['My Project', 'Research', ...]
-files = projects['My Project']    # dict-like access to knowledge files
-list(files)                       # ['context.md', 'notes.md']
+list(projects)  # ['My Project', 'Research', ...]
+files = projects["My Project"]  # dict-like access to knowledge files
+list(files)  # ['context.md', 'notes.md']
 ```
 
 ### Direct project access
@@ -122,7 +122,7 @@ list(files)                       # ['context.md', 'notes.md']
 ```python
 from aikb import ClaudeProject
 
-store = ClaudeProject('project-uuid', session_key='sk-ant-...')
+store = ClaudeProject("project-uuid", session_key="sk-ant-...")
 ```
 
 Project UUIDs are visible in the Claude.ai URL: `https://claude.ai/project/{uuid}`
@@ -186,6 +186,6 @@ Claude.ai session keys expire periodically. Get a fresh one from your browser co
 If you belong to multiple Claude organizations, specify which one:
 
 ```python
-ClaudeProjects(organization_id='org-uuid')
-ClaudeProject('project-uuid', organization_id='org-uuid')
+ClaudeProjects(organization_id="org-uuid")
+ClaudeProject("project-uuid", organization_id="org-uuid")
 ```
