@@ -2,7 +2,7 @@
 
 ## What this is
 
-`aikb` provides programmatic CRUD for AI project knowledge bases (Claude Projects, Gemini Gems) via a `MutableMapping` interface compatible with `dol`.
+`aikb` provides programmatic CRUD for AI project knowledge bases (Claude Projects, and a local provider; Gemini Gems are planned, not implemented) via a `MutableMapping` interface compatible with `dol`.
 
 ## Architecture
 
