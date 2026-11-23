@@ -5,7 +5,7 @@
 
 ## Pages in this subsection
 
-- [aikb](aikb.html.md): Programmatic CRUD for AI project knowledge bases (Claude Projects, Gemini Gems).
+- [aikb](aikb.html.md): Programmatic CRUD for AI project knowledge bases (Claude Projects, and a local provider; Gemini Gems...
 - [aikb.base](aikb.base.html.md): Core module: protocols, stores, providers, and factory functions for aikb.
 - [aikb.mcp_server](aikb.mcp_server.html.md): MCP server exposing knowledge base CRUD as tools.
 - [aikb.sync](aikb.sync.html.md): Bidirectional sync with three-way reconciliation.

@@ -2,7 +2,7 @@
 
 # About this build
 
-This documentation was built on **2026-11-22 14:37 UTC** from commit <a href="https://github.com/addaix/aikb/commit/d6a16583ca8e178178b2c94481736f20ada22f61"><code>d6a1658</code></a> on branch <code>main</code>, for **aikb 0.0.8** (from <code>pyproject.toml</code>).
+This documentation was built on **2026-11-23 05:01 UTC** from commit <a href="https://github.com/addaix/aikb/commit/e39851604358f4141ecea1fcba52b3b475cebc6e"><code>e398516</code></a> on branch <code>main</code>, for **aikb 0.0.9** (from <code>pyproject.toml</code>).
 
 #### NOTE
 Nothing suggests a mismatch: the tree was clean at the commit above, and the documented version is the one on PyPI.
@@ -11,9 +11,9 @@ Nothing suggests a mismatch: the tree was clean at the commit above, and the doc
 
 |                     |                                                                                                                                                    |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Commit              | <a href="https://github.com/addaix/aikb/commit/d6a16583ca8e178178b2c94481736f20ada22f61"><code>d6a16583ca8e178178b2c94481736f20ada22f61</code></a> |
+| Commit              | <a href="https://github.com/addaix/aikb/commit/e39851604358f4141ecea1fcba52b3b475cebc6e"><code>e39851604358f4141ecea1fcba52b3b475cebc6e</code></a> |
 | Branch              | <code>main</code>                                                                                                                                  |
-| Tags at this commit | <code>0.0.8</code>                                                                                                                                 |
+| Tags at this commit | <code>0.0.9</code>                                                                                                                                 |
 | Working tree        | clean                                                                                                                                              |
 | Remote              | <code>https://github.com/addaix/aikb</code>                                                                                                        |
 
@@ -22,9 +22,9 @@ Nothing suggests a mismatch: the tree was clean at the commit above, and the doc
 |              |                                                                                            |
 |--------------|--------------------------------------------------------------------------------------------|
 | Repository   | <code>addaix/aikb</code>                                                                   |
-| Run          | <a href="https://github.com/addaix/aikb/actions/runs/45033663440">45033663440</a>          |
+| Run          | <a href="https://github.com/addaix/aikb/actions/runs/45115036844">45115036844</a>          |
 | Ref          | <code>refs/heads/main</code>                                                               |
-| Event commit | <code>c2dd525b30f4c860d145dd2f2d081330e6f5ab30</code> (in the history of the built commit) |
+| Event commit | <code>ac11c0b62e3169bf67da2fee7055bc699e4fdd6a</code> (in the history of the built commit) |
 
 ## Tools
 
@@ -49,13 +49,13 @@ Nothing suggests a mismatch: the tree was clean at the commit above, and the doc
 
 ## Package on PyPI
 
-Latest release: <a href="https://pypi.org/project/aikb/0.0.8/">0.0.8</a>, the same as the documented version.
+Latest release: <a href="https://pypi.org/project/aikb/0.0.9/">0.0.9</a>, the same as the documented version.
 
 ## Reproduce
 
 ```bash
 git clone https://github.com/addaix/aikb && cd aikb
-git checkout d6a16583ca8e178178b2c94481736f20ada22f61
+git checkout e39851604358f4141ecea1fcba52b3b475cebc6e
 pip install "epythet==0.2.23"
 epythet quickstart . --ignore tests/ scrap/ examples/
 ```

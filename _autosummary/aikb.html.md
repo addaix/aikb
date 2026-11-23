@@ -1,6 +1,6 @@
 # aikb
 
-Programmatic CRUD for AI project knowledge bases (Claude Projects, Gemini Gems).
+Programmatic CRUD for AI project knowledge bases (Claude Projects, and a local provider; Gemini Gems are planned, not implemented).
 
 ### Modules
 

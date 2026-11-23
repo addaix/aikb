@@ -2,7 +2,7 @@
 
 # aikb
 
-Programmatic CRUD for AI project knowledge bases (Claude Projects, Gemini Gems).
+Programmatic CRUD for AI project knowledge bases (Claude Projects, and a local provider; Gemini Gems are planned, not implemented).
 
 Dict-like access to knowledge files — `store['notes.md'] = content` — backed by
 local files, Claude Projects (via ClaudeSync), or any custom provider.

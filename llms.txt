@@ -5,14 +5,14 @@
 
 ## Pages
 
-- [aikb](index.html.md): Programmatic CRUD for AI project knowledge bases (Claude Projects, Gemini Gems).
-- [API reference](api.html.md): | &#96;aikb&#96;   | Programmatic CRUD for AI project knowledge bases (Claude Projects, Gemini Gems).   |
-- [aikb](_autosummary/aikb.html.md): Programmatic CRUD for AI project knowledge bases (Claude Projects, Gemini Gems).
+- [aikb](index.html.md): Programmatic CRUD for AI project knowledge bases (Claude Projects, and a local provider; Gemini Gems...
+- [API reference](api.html.md): | &#96;aikb&#96;   | Programmatic CRUD for AI project knowledge bases (Claude Projects, and a local provider...
+- [aikb](_autosummary/aikb.html.md): Programmatic CRUD for AI project knowledge bases (Claude Projects, and a local provider; Gemini Gems...
 - [aikb.base](_autosummary/aikb.base.html.md): Core module: protocols, stores, providers, and factory functions for aikb.
 - [aikb.mcp_server](_autosummary/aikb.mcp_server.html.md): MCP server exposing knowledge base CRUD as tools.
 - [aikb.sync](_autosummary/aikb.sync.html.md): Bidirectional sync with three-way reconciliation.
 - [For AI agents](ai-agents.html.md): &#96;aikb&#96; ships artifacts for coding agents alongside its code. This page lists
-- [About this build](about-this-build.html.md): This documentation was built on &#42;&#42;2026-11-22 14:37 UTC&#42;&#42; from commit &lt;a href="https://github.com/add...
+- [About this build](about-this-build.html.md): This documentation was built on &#42;&#42;2026-11-23 05:01 UTC&#42;&#42; from commit &lt;a href="https://github.com/add...
 
 ## Optional
 
